@@ -1,4 +1,10 @@
 # SPDX-License-Identifier: GPL-2.0
+
+# Enables support for device-tree overlays for all pis and development boards
+DTC_FLAGS_sun4i-a10-cubieboard := -@
+DTC_FLAGS_sun4i-a10-olinuxino-lime := -@
+DTC_FLAGS_sun4i-a10-pcduino := -@
+DTC_FLAGS_sun4i-a10-pcduino2 := -@
 dtb-$(CONFIG_MACH_SUN4I) += \
 	sun4i-a10-a1000.dtb \
 	sun4i-a10-ba10-tvbox.dtb \
@@ -22,6 +28,12 @@ dtb-$(CONFIG_MACH_SUN4I) += \
 	sun4i-a10-pcduino2.dtb \
 	sun4i-a10-pov-protab2-ips9.dtb \
 	sun4i-a10-topwise-a721.dtb
+
+# Enables support for device-tree overlays for all pis and development boards
+DTC_FLAGS_sun5i-a10s-olinuxino-micro := -@
+DTC_FLAGS_sun5i-a13-licheepi-one := -@
+DTC_FLAGS_sun5i-a13-olinuxino := -@
+DTC_FLAGS_sun5i-a13-olinuxino-micro := -@
 dtb-$(CONFIG_MACH_SUN5I) += \
 	sun5i-a10s-auxtek-t003.dtb \
 	sun5i-a10s-auxtek-t004.dtb \
@@ -57,6 +69,27 @@ dtb-$(CONFIG_MACH_SUN6I) += \
 	sun6i-a31s-sina31s.dtb \
 	sun6i-a31s-sinovoip-bpi-m2.dtb \
 	sun6i-a31s-yones-toptech-bs1078-v2.dtb
+
+# Enables support for device-tree overlays for all pis and development boards
+DTC_FLAGS_sun7i-a20-bananapi := -@
+DTC_FLAGS_sun7i-a20-bananapi-m1-plus := -@
+DTC_FLAGS_sun7i-a20-bananapro := -@
+DTC_FLAGS_sun7i-a20-cubieboard2 := -@
+DTC_FLAGS_sun7i-a20-cubietruck := -@
+DTC_FLAGS_sun7i-a20-olimex-som-evb := -@
+DTC_FLAGS_sun7i-a20-olimex-som-evb-emmc := -@
+DTC_FLAGS_sun7i-a20-olimex-som204-evb := -@
+DTC_FLAGS_sun7i-a20-olimex-som204-evb-emmc := -@
+DTC_FLAGS_sun7i-a20-olinuxino-lime := -@
+DTC_FLAGS_sun7i-a20-olinuxino-lime-emmc := -@
+DTC_FLAGS_sun7i-a20-olinuxino-lime2 := -@
+DTC_FLAGS_sun7i-a20-olinuxino-lime2-emmc := -@
+DTC_FLAGS_sun7i-a20-olinuxino-micro := -@
+DTC_FLAGS_sun7i-a20-olinuxino-micro-emmc := -@
+DTC_FLAGS_sun7i-a20-orangepi := -@
+DTC_FLAGS_sun7i-a20-orangepi-mini := -@
+DTC_FLAGS_sun7i-a20-pcduino3 := -@
+DTC_FLAGS_sun7i-a20-pcduino3-nano := -@
 dtb-$(CONFIG_MACH_SUN7I) += \
 	sun7i-a20-bananapi.dtb \
 	sun7i-a20-bananapi-m1-plus.dtb \
@@ -90,12 +123,23 @@ dtb-$(CONFIG_MACH_SUN7I) += \
 	sun7i-a20-wexler-tab7200.dtb \
 	sun7i-a20-wits-pro-a20-dkt.dtb
 
-# Enables support for device-tree overlays for all pis
-DTC_FLAGS_sun8i-h3-orangepi-lite := -@
+# Enables support for device-tree overlays for all pis and development boards
+DTC_FLAGS_sun8i-a83t-bananapi-m3 := -@
+DTC_FLAGS_sun8i-a83t-cubietruck-plus := -@
+DTC_FLAGS_sun8i-h2-plus-bananapi-m2-zero := -@
+DTC_FLAGS_sun8i-h2-plus-libretech-all-h3-cc := -@
+DTC_FLAGS_sun8i-h2-plus-orangepi-zero := -@
+DTC_FLAGS_sun8i-h2-plus-orangepi-r1 := -@
 DTC_FLAGS_sun8i-h3-bananapi-m2-plus := -@
-DTC_FLAGS_sun8i-h3-nanopi-m1-plus := -@
-DTC_FLAGS_sun8i-h3-nanopi-m1 := -@
+DTC_FLAGS_sun8i-h3-bananapi-m2-plus-v1.2 := -@
+DTC_FLAGS_sun8i-h3-libretech-all-h3-cc := -@
+DTC_FLAGS_sun8i-h3-mapleboard-mp130 := -@
 DTC_FLAGS_sun8i-h3-nanopi-duo2 := -@
+DTC_FLAGS_sun8i-h3-nanopi-m1 := -@
+DTC_FLAGS_sun8i-h3-nanopi-m1-plus := -@
+DTC_FLAGS_sun8i-h3-nanopi-neo := -@
+DTC_FLAGS_sun8i-h3-nanopi-neo-air := -@
+DTC_FLAGS_sun8i-h3-nanopi-r1 := -@
 DTC_FLAGS_sun8i-h3-orangepi-plus2e := -@
 DTC_FLAGS_sun8i-h3-orangepi-one := -@
 DTC_FLAGS_sun8i-h3-orangepi-plus := -@
@@ -105,9 +149,19 @@ DTC_FLAGS_sun8i-h3-nanopi-neo-air := -@
 DTC_FLAGS_sun8i-h3-zeropi := -@
 DTC_FLAGS_sun8i-h3-nanopi-neo := -@
 DTC_FLAGS_sun8i-h3-nanopi-r1 := -@
+DTC_FLAGS_sun8i-h3-orangepi-2 := -@
+DTC_FLAGS_sun8i-h3-orangepi-lite := -@
+DTC_FLAGS_sun8i-h3-orangepi-one := -@
 DTC_FLAGS_sun8i-h3-orangepi-pc := -@
-DTC_FLAGS_sun8i-h3-bananapi-m2-plus-v1.2 := -@
 DTC_FLAGS_sun8i-h3-orangepi-pc-plus := -@
+DTC_FLAGS_sun8i-h3-orangepi-plus := -@
+DTC_FLAGS_sun8i-h3-orangepi-plus2e := -@
+DTC_FLAGS_sun8i-h3-orangepi-zero-plus2 := -@
+DTC_FLAGS_sun8i-r40-bananapi-m2-ultra := -@
+DTC_FLAGS_sun8i-s3-lichee-zero-plus := -@
+DTC_FLAGS_sun8i-t113s-mangopi-mq-r-t113 := -@
+DTC_FLAGS_sun8i-v3s-licheepi-zero-dock := -@
+DTC_FLAGS_sun8i-v40-bananapi-m2-berry := -@
 dtb-$(CONFIG_MACH_SUN8I) += \
 	sun8i-a23-evb.dtb \
 	sun8i-a23-gt90h-v4.dtb \
@@ -169,9 +223,17 @@ dtb-$(CONFIG_MACH_SUN8I) += \
 	sun8i-v3s-licheepi-zero.dtb \
 	sun8i-v3s-licheepi-zero-dock.dtb \
 	sun8i-v40-bananapi-m2-berry.dtb
+
+# Enables support for device-tree overlays for all pis and development boards
+DTC_FLAGS_sun9i-a80-cubieboard4 := -@
 dtb-$(CONFIG_MACH_SUN9I) += \
 	sun9i-a80-optimus.dtb \
 	sun9i-a80-cubieboard4.dtb
+
+# Enables support for device-tree overlays for all pis and development boards
+DTC_FLAGS_suniv-f1c100s-licheepi-nano := -@
+DTC_FLAGS_suniv-f1c200s-lctech-pi := -@
+DTC_FLAGS_suniv-f1c200s-popstick-v1.1 := -@
 dtb-$(CONFIG_MACH_SUNIV) += \
 	suniv-f1c100s-licheepi-nano.dtb \
 	suniv-f1c200s-lctech-pi.dtb \
