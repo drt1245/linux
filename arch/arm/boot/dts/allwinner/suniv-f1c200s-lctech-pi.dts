@@ -29,6 +29,24 @@
 		regulator-min-microvolt = <3300000>;
 		regulator-max-microvolt = <3300000>;
 	};
+
+	reg_dram2v5: regulator-2v5 {
+		compatible = "regulator-fixed";
+		regulator-name = "dram2v5";
+		regulator-min-microvolt = <2500000>;
+		regulator-max-microvolt = <2500000>;
+	};
+
+	reg_core1v2: regulator-1v2 {
+		compatible = "regulator-fixed";
+		regulator-name = "core1v2";
+		regulator-min-microvolt = <1200000>;
+		regulator-max-microvolt = <1200000>;
+	};
+};
+
+&cpu0 {
+	cpu-supply = <&reg_core1v2>;
 };
 
 &mmc0 {

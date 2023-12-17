@@ -16,6 +16,7 @@
  * platforms using "operating-points" (V1) property.
  */
 static const struct of_device_id allowlist[] __initconst = {
+	{ .compatible = "allwinner,suniv-f1c100s", },
 	{ .compatible = "allwinner,sun4i-a10", },
 	{ .compatible = "allwinner,sun5i-a10s", },
 	{ .compatible = "allwinner,sun5i-a13", },
