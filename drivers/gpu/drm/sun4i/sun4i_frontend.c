@@ -695,6 +695,10 @@ static const struct sun4i_frontend_data sun8i_a33_frontend = {
 
 const struct of_device_id sun4i_frontend_of_table[] = {
 	{
+		.compatible = "allwinner,suniv-f1c100s-display-frontend",
+		.data = &sun4i_a10_frontend
+	},
+	{
 		.compatible = "allwinner,sun4i-a10-display-frontend",
 		.data = &sun4i_a10_frontend
 	},

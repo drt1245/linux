@@ -23,6 +23,28 @@
 		stdout-path = "serial0:115200n8";
 	};
 
+	panel: panel {
+		// default 800x480 resolution lcd
+		//compatible = "lg,lb070wv8", "simple-panel";
+		// smaller 480x272 resolution lcd
+		compatible = "qiaodian,qd43003c0-40", "simple-panel";
+		#address-cells = <1>;
+		#size-cells = <0>;
+		enable-gpios = <&pio 4 6 GPIO_ACTIVE_HIGH>; /* PE6 */
+		power-supply = <&reg_vcc3v3>;
+
+		port@0 {
+			reg = <0>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+
+			panel_input: endpoint@0 {
+				reg = <0>;
+				remote-endpoint = <&tcon0_out_lcd>;
+			};
+		};
+	};
+
 	reg_vcc3v3: regulator-3v3 {
 		compatible = "regulator-fixed";
 		regulator-name = "vcc3v3";
@@ -49,6 +71,18 @@
 	cpu-supply = <&reg_core1v2>;
 };
 
+&be0 {
+	status = "okay";
+};
+
+&fe0 {
+	status = "okay";
+};
+
+&de {
+	status = "okay";
+};
+
 &mmc0 {
 	broken-cd;
 	bus-width = <4>;
@@ -70,6 +104,19 @@
 		compatible = "spi-nand";
 		reg = <0>;
 		spi-max-frequency = <40000000>;
+	};
+};
+
+&tcon0 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&lcd_rgb666_pins>;
+	status = "okay";
+};
+
+&tcon0_out {
+	tcon0_out_lcd: endpoint@0 {
+		reg = <0>;
+		remote-endpoint = <&panel_input>;
 	};
 };
 
