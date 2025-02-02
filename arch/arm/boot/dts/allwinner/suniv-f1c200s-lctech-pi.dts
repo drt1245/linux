@@ -83,6 +83,19 @@
 	status = "okay";
 };
 
+&i2c0 {
+	pinctrl-0 = <&i2c0_pd_pins>;
+	pinctrl-names = "default";
+	status = "okay";
+
+	ns2009: touchscreen@48 {
+		compatible = "nsiway,ns2009";
+		reg = <0x48>;
+		touchscreen-fuzz-x = <8>;
+		touchscreen-fuzz-y = <8>;
+	};
+};
+
 &mmc0 {
 	broken-cd;
 	bus-width = <4>;
